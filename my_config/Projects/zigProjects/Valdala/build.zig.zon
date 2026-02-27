@@ -1,0 +1,76 @@
+.{
+    .name = .Valdala,
+    .version = "0.0.2",
+    .fingerprint = 0x4caff166888c6c5b,
+    .minimum_zig_version = "0.15.1",
+    .paths = .{
+        // TODO
+        "source"
+    },
+    .dependencies = .{
+        .zigimg = .{
+            .url = "https://github.com/zigimg/zigimg/archive/b53e228986e127df1223975227969ed6a50126e7.zip",
+            .hash = "zigimg-0.1.0-8_eo2rwbFgCSVcvqipgjAQueoazrTAiIvqk0F2bKYpE1"
+        },
+        .TrueType = .{
+            .url = "https://codeberg.org/andrewrk/TrueType/archive/7543e2dca70267e8f09e37be00fbc0385138581d.zip",
+            .hash = "TrueType-0.0.0-Ne-mWHIGAQBwHsiS9z_vbr1SkVZCkG01Vpzrs079dzIO"
+        },
+        .webgpu = .{
+            .url = "https://codeberg.org/Silverclaw/zig-wgpu-native/archive/db0d4822120fb6326974c5aaa0826d8238d660a8.zip",
+            .hash = "wgpu_native-2.3.0-dKjiOA02AQA-X31_18eoVLw3WTau30IqKpNd8aeX0Fgd"
+        },
+        .glfw = .{
+            .url = "https://codeberg.org/Silverclaw/zig-glfw/archive/8cf6e5ed149eed6d052bb8080336c75367a04b86.zip",
+            .hash = "glfw-1.2.1-P2aihbSBAAAh8f8cMLMz90dQYpVtCwC7a3v5Qv2YW36D"
+        },
+        .yaml = .{
+            .url = "https://github.com/kubkon/zig-yaml/archive/a6c2cd8760bf45c49b17a3f6259c4dfe3ded528e.zip",
+            .hash = "zig_yaml-0.2.0-C1161pmrAgDnipDTh_4v4RQD27XN5GNaVlzzvlXf1jfW"
+        },
+        .zgltf = .{
+            .url = "https://github.com/kooparse/zgltf/archive/ec52d477db346af99d4cdced4e35e67e1670023f.zip",
+            .hash = "zgltf-0.1.0-sX6QAt0SAgDzMQCCG-N181hVbx8JnwFYZ3luQigQpVBM"
+        },
+        .FastNoiseLite = .{
+            .url = "https://github.com/Auburn/FastNoiseLite/archive/582f7cf21065a48ee1c3cf62048831bbaa4581c5.zip",
+            .hash = "N-V-__8AABY_GwCAGzp0XrNxRLe9u6EZRjtpGXexbZoNmTtg"
+        },
+
+        // binary dependencies
+        // GLFW 3.4
+        .glfw_windows = .{
+            .url = "https://github.com/glfw/glfw/releases/download/3.4/glfw-3.4.bin.WIN64.zip",
+            .hash = "N-V-__8AAOlnwQD_q2VUB2dZD64hwX7kJ2w9knrChBKgJHe0",
+            .lazy = true
+        },
+        .glfw_macos = .{
+            .url = "https://github.com/glfw/glfw/releases/download/3.4/glfw-3.4.bin.MACOS.zip",
+            .hash = "N-V-__8AABVVVQCIqbbi_dakX4jJDKZw2cnJrkUWFFOyd4ci",
+            .lazy = true
+        },
+
+        // wgpu-native 27
+        // TODO release builds
+        .wgpu_linux = .{
+            .url = "https://github.com/gfx-rs/wgpu-native/releases/download/v27.0.2.0/wgpu-linux-x86_64-debug.zip",
+            .hash = "N-V-__8AACx_YhW8kbx_vuKCJQu1_0cVbbcLZjm-OX-TIm0B",
+            .lazy = true
+        },
+        .wgpu_windows = .{
+            .url = "https://github.com/gfx-rs/wgpu-native/releases/download/v27.0.2.0/wgpu-windows-x86_64-gnu-debug.zip",
+            .hash = "N-V-__8AADxhgRMl9YGsWAOdmsKsNXOk7uztVzpr1o_h4OBh",
+            .lazy = true
+        },
+        .wgpu_macos_x86_64 = .{
+            .url = "https://github.com/gfx-rs/wgpu-native/releases/download/v27.0.2.0/wgpu-macos-x86_64-debug.zip",
+            .hash = "N-V-__8AAMBJFQon8Hu6WhO-Kp_7GLNV3nypyTsKLYNuBnEb",
+            .lazy = true
+        },
+        .wgpu_macos_aarch64 = .{
+            .url = "https://github.com/gfx-rs/wgpu-native/releases/download/v27.0.2.0/wgpu-macos-aarch64-debug.zip",
+	        .hash = "N-V-__8AANjnOQoNkft8Nn5WRAL__IxRPP83A0SOpfv-TJkC",
+            .lazy = true
+        },
+    }
+}

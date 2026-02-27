@@ -1,0 +1,74 @@
+from AlgorithmImports import *
+
+class MomentumStrategy(QCAlgorithm):
+
+    def Initialize(self):
+        self.SetStartDate(2014, 4, 25)
+        self.SetEndDate(2015, 4, 25)
+        self.SetCash(10000)
+
+        self.symbol = self.AddEquity("AAPL", Resolution.Minute).Symbol
+
+        self.consolidator = TradeBarConsolidator(timedelta(minutes=15))
+        self.SubscriptionManager.AddConsolidator(self.symbol, self.consolidator)
+        self.consolidator.DataConsolidated += self.On15MinBar
+
+        self.sma9 = SimpleMovingAverage(9)
+        self.ichimoku = IchimokuKinkoHyo(9, 26, 52, 26)
+
+        self.RegisterIndicator(self.symbol, self.sma9, self.consolidator)
+        self.RegisterIndicator(self.symbol, self.ichimoku, self.consolidator)
+
+        # ---- State ----
+        self.in_position = False
+        self.stop_loss = None
+        self.last_exit_time = None   # NEW
+
+        # ---- Risk controls ----
+        self.min_sl_pct = 0.003      # 0.30%
+        self.cooldown_bars = 3
+
+        self.SetWarmUp(timedelta(days=60))
+
+    def On15MinBar(self, sender, bar):
+        if self.IsWarmingUp:
+            return
+
+        # ---- Cooldown check ----
+        if self.last_exit_time:
+            bars_since_exit = int((bar.EndTime - self.last_exit_time).total_seconds() / (15 * 60))
+            if bars_since_exit < self.cooldown_bars:
+                return
+
+        price = bar.Close
+        kijun = self.ichimoku.Kijun.Current.Value
+        sma = self.sma9.Current.Value
+
+        # ---- ENTRY ----
+        if not self.in_position:
+            if sma > kijun and price > kijun:
+                proposed_sl = bar.Low
+                sl_distance_pct = (price - proposed_sl) / price
+
+                # ---- Minimum SL filter ----
+                if sl_distance_pct < self.min_sl_pct:
+                    return
+
+                self.SetHoldings(self.symbol, 0.35)
+                self.stop_loss = proposed_sl
+                self.in_position = True
+
+                self.Debug(
+                    f"BUY @ {price:.2f}, SL={self.stop_loss:.2f}, SL%={sl_distance_pct:.3%}"
+                )
+
+        # ---- EXIT ----
+        else:
+            if price < self.stop_loss:
+                self.Liquidate(self.symbol)
+                self.in_position = False
+                self.stop_loss = None
+                self.last_exit_time = bar.EndTime
+
+                self.Debug("STOP LOSS HIT — cooldown started")
+

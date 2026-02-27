@@ -1,0 +1,92 @@
+﻿# zphys
+
+A simple, work-in-progress physics engine written in Zig.
+
+This repository is currently experimental. APIs, structure, and features will likely change as the design evolves.
+
+
+https://github.com/user-attachments/assets/88634804-fb94-4cdd-8287-baaeb293ad7d
+
+
+## Status
+
+Early prototype. Expect frequent breaking changes.
+
+## Features
+
+- **Rigid Body Dynamics:** Simulation of rigid bodies with basic motion integration.
+- **Collision Detection:**
+    - GJK (Gilbert-Johnson-Keerthi) algorithm for convex shape collision detection.
+    - EPA (Expanding Polytope Algorithm) for penetration depth and contact normal calculation.
+- **Collision Manifold Generation:** Contact point generation for stable stacking.
+- **Primitive Shapes:**
+    - Box
+    - Sphere
+- **Constraints:**
+    - Penetration constraints solver.
+    - Friction support.
+
+## Examples
+
+The project includes several examples to demonstrate the engine's capabilities:
+
+- **Basic:** Simple scene with dropping bodies.
+- **Friction:** Demonstration of friction on a ramp.
+- **Pyramid:** A stacking demo showing stability.
+- **GJK/EPA Visualizer:** An interactive visualizer to step through the GJK and EPA algorithms for debugging and educational purposes.
+
+## Getting Started
+
+Prerequisites:
+- Zig (latest stable). Install instructions: https://ziglang.org/learn/getting-started/
+
+Build all:
+```bash
+zig build
+```
+
+Run tests:
+```bash
+zig build test
+```
+
+### Running Examples
+
+To run specific examples, use the `-D` flags:
+
+**Basic Example:**
+```bash
+zig build run -Dbasic
+```
+
+**Friction Example:**
+```bash
+zig build run -Dfriction
+```
+
+**Pyramid Example:**
+```bash
+zig build run -Dpyramid
+```
+
+**GJK/EPA Visualizer:**
+```bash
+zig build run -Dvisualizer
+```
+
+## Contributing
+
+Contributions are welcome while we shape the design. Please open an issue or draft PR to discuss ideas and direction first.
+
+## Planned Features
+
+- BroadPhase collision detection
+- Collision layers
+- Constraint implementation examples
+- Warm starting for solver stability
+- Fluid simulation support
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+

@@ -1,0 +1,10 @@
+[project]
+name = "test-algo"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "lean>=1.0.221",
+    "quantconnect-stubs>=17453",
+]

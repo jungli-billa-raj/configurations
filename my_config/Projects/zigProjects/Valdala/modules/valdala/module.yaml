@@ -1,0 +1,11 @@
+name: Valdala
+tiles:
+  water: tiles/water/tile.yaml
+  sand: tiles/sand/tile.yaml
+  topsoil: tiles/topsoil/tile.yaml
+  soil: tiles/soil/tile.yaml
+  rock: tiles/rock/tile.yaml
+entities:
+  cube: entities/cube/entity.yaml
+  shrine: entities/shrine/entity.yaml
+  cow: entities/staff/entity.yaml

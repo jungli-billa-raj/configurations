@@ -1,0 +1,5 @@
+name: Grass
+textures:
+    top: top.png
+    side: side.png
+    bottom: ../soil/cover.png
