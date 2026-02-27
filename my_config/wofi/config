@@ -1,0 +1,12 @@
+show=drun
+prompt=Run
+width=40%
+height=38%
+lines=12
+
+allow_images=false
+insensitive=true
+matching=fuzzy
+
+term=kitty
+layer=overlay

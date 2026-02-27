@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=Battery Watch
+Exec=/home/meoww/.local/bin/battery-watch.sh
+X-GNOME-Autostart-enabled=true
+

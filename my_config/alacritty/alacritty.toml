@@ -1,0 +1,46 @@
+[font]
+normal = { family = "DepartureMono Nerd Font Mono", style = "Bold" }
+bold = { family = "JetBrainsMono Nerd Font", style = "Bold" }
+size = 13.0
+
+[window]
+opacity = 0.80 # 1.0 is opaque, 0.0 is fully transparent
+blur = true    # Only works on some systems, but looks great if it does
+decorations = "None"
+
+[window.padding]
+x = 10
+# y = 10
+
+[scrolling]
+history = 50000 # Number of lines to remember
+multiplier = 3  # How many lines to scroll at a time
+
+[cursor]
+style = { shape = "Block", blinking = "On" }
+blink_interval = 500
+
+[colors.primary]
+background = "#000000"
+# foreground = "#c0caf5"
+foreground = "#ffffff"
+
+[colors.normal]
+black =   "#000000"
+red =     "#f7768e"
+green =   "#9ece6a"
+yellow =  "#e0af68"
+blue =    "#7aa2f7"
+magenta = "#bb9af7"
+cyan =    "#7dcfff"
+white =   "#ffffff"
+
+[colors.bright]
+black =   "#414868"
+red =     "#f7768e"
+green =   "#9ece6a"
+yellow =  "#e0af68"
+blue =    "#7aa2f7"
+magenta = "#bb9af7"
+cyan =    "#7dcfff"
+white =   "#ffffff"

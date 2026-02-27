@@ -1,0 +1,45 @@
+* {
+  font-family: "DejaVu Sans Mono", "Font Awesome 6 Free";
+  font-size: 13px;
+}
+
+window#waybar {
+  background-color: rgba(43, 48, 59, 0.5);
+  border-bottom: 2px solid rgba(100, 114, 125, 0.5);
+  color: #ffffff;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  background-color: transparent;
+  color: #ffffff;
+}
+
+#workspaces button.focused {
+  background-color: #64727D;
+  border-bottom: 3px solid #ffffff;
+}
+
+#battery,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#backlight,
+#clock {
+  padding: 0 10px;
+  margin: 0 4px;
+}
+
+#battery.critical {
+  color: #ff0000;
+}
+
+#window {
+  font-weight: bold;
+  color: #61afef;
+  /* A nice blue color */
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0 15px;
+  border-radius: 10px;
+}

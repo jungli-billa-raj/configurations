@@ -1,0 +1,33 @@
+{
+	"appID": {
+		"id": "ac7e36b1-40d1-4b93-8ef0-da7c92f18a56",
+		"hash": "eeaf05847c3463464d19b028ffba5f7da49a33b4b056bdd904fd43995ef04b4a",
+		"distribution": 0.9323581169557698
+	},
+	"settings": {
+		"spellChecker": true,
+		"overrideError": false,
+		"releaseCategory": "Stable",
+		"rolloutProportion": 0.9090354528758897,
+		"appCacheEnabled": true
+	},
+	"defaultProtocols": {
+		"mailto": {
+			"shouldBeDefault": true,
+			"wasDefaultInPast": false,
+			"lastReport": {
+				"wasDefault": false,
+				"timestamp": 0
+			},
+			"canUpdateDefault": true
+		}
+	},
+	"windowBounds": {
+		"x": 0,
+		"y": 67,
+		"width": 1619,
+		"height": 844,
+		"maximized": true,
+		"zoom": 1
+	}
+}
